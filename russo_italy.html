@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna Ivanova - Lezioni di Russo Online per Italiani</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts для итальянской элегантности -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Стили -->
+    <style>
+        :root {
+            --color-primary: #2C3E50;    /* Глубокий синий - элегантность */
+            --color-secondary: #A67C52;  /* Терракотовый - тепло */
+            --color-accent: #4A6FA5;     /* Мягкий синий */
+            --color-light: #F8F9FA;      /* Светлый фон */
+            --color-text: #333333;       /* Основной текст */
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--color-secondary);
+        }
+        
+        /* Hero секция */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 80px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--color-secondary);
+            border-color: var(--color-secondary);
+            color: white;
+            padding: 12px 30px;
+            font-weight: 500;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #8a623f;
+            border-color: #8a623f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* О преподавателе */
+        .about-img {
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .about-img:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Карточки */
+        .feature-card {
+            border: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        /* Отзывы */
+        .testimonial-card {
+            border-left: 4px solid var(--color-secondary);
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .testimonial-author {
+            color: var(--color-primary);
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+        
+        /* Форма */
+        .contact-form {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        .form-control {
+            border-radius: 2px;
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-control:focus {
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 0.25rem rgba(74, 111, 165, 0.25);
+        }
+        
+        /* Футер */
+        .footer {
+            background-color: var(--color-primary);
+            color: rgba(255,255,255,0.8);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--color-secondary);
+            transform: translateY(-3px);
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero {
+                padding: 100px 0 60px;
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" style="color: var(--color-primary); font-family: 'Playfair Display', serif;">
+                Anna Ivanova
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">Chi Sono</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#method">Il Metodo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#courses">Corsi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reviews">Recensioni</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contatti</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-primary-custom" href="#contact">Lezione di Prova</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero секция -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>Parliamo Russo?</h1>
+                    <p class="hero-subtitle">Lezioni personalizzate di russo online per italiani. Professionalità, passione e un metodo chiaro per scoprire la bellezza della lingua russa.</p>
+                    <div class="mt-4">
+                        <a href="#contact" class="btn btn-primary-custom btn-lg me-3">Prenota una lezione gratuita</a>
+                        <a href="#method" class="btn btn-outline-light btn-lg">Scopri il metodo</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center mt-5 mt-lg-0">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Anna Ivanova, insegnante di russo" 
+                             class="img-fluid rounded-circle border border-5 border-white shadow about-img"
+                             style="max-width: 400px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О преподавателе -->
+    <section id="about" class="py-5" style="background-color: var(--color-light);">
+        <div class="container py-5">
+            <h2 class="section-title">La tua guida nel mondo russo</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Anna insegna russo" 
+                         class="img-fluid rounded shadow about-img">
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Ciao, sono Anna</h3>
+                    <p>Insegnante di russo con oltre 10 anni di esperienza, specializzata nell'insegnamento a studenti italiani. Dopo la laurea in Linguistica all'Università Statale di Mosca e un master in Didattica delle Lingue Straniere, ho deciso di dedicarmi all'insegnamento della mia lingua madre.</p>
+                    <p>Vivo in Italia da 6 anni e conosco perfettamente le sfide specifiche che gli italiani affrontano nell'apprendimento del russo. Il mio approccio combina <strong>rigore metodologico</strong> con <strong>calore umano</strong>, creando un ambiente dove è bello imparare.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Laureata in Linguistica</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Certificata nell'insegnamento del russo come lingua straniera</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 10+ anni di esperienza</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Specializzata per studenti italiani</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Fluente in italiano e inglese</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Insegnante per adulti e bambini</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Метод -->
+    <section id="method" class="py-5">
+        <div class="container py-5">
+            <h2 class="section-title">Il mio metodo: efficace e su misura</h2>
+            <p class="text-center mb-5 mx-auto" style="max-width: 800px;">Credo che l'apprendimento di una lingua debba essere un'esperienza piacevole e personalizzata. Per questo ho sviluppato un metodo che si adatta alle tue esigenze specifiche.</p>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card feature-card h-100 p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h4>Comunicativo</h4>
+                        <p>Fin dalla prima lezione parliamo in russo. L'obiettivo è sviluppare la capacità di comunicare in situazioni reali.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card feature-card h-100 p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-cog"></i>
+                        </div>
+                        <h4>Personalizzato</h4>
+                        <p>Ogni corso è creato su misura in base ai tuoi obiettivi, interessi e stile di apprendimento.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card feature-card h-100 p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h4>Interattivo</h4>
+                        <p>Utilizzo materiali autentici, giochi, video e risorse digitali per rendere le lezioni vive e coinvolgenti.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card feature-card h-100 p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-culture"></i>
+                        </div>
+                        <h4>Culturale</h4>
+                        <p>Imparare una lingua significa anche conoscere la sua cultura. Scopriremo insieme tradizioni, letteratura e vita quotidiana russa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Курсы -->
+    <section id="courses" class="py-5" style="background-color: var(--color-light);">
+        <div class="container py-5">
+            <h2 class="section-title">Corsi su misura per te</h2>
+            
+            <div class="row g-4 mt-4">
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-header text-white text-center py-4" style="background-color: var(--color-primary);">
+                            <h4 class="mb-0">Per Adulti</h4>
+                        </div>
+                        <div class="card-body p-4">
+                            <p>Per professionisti, viaggiatori o appassionati della cultura russa. Corsi generali o specializzati (business, viaggi, preparazione ad esami).</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Conversazione quotidiana e professionale</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Lessico specifico per i tuoi interessi</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Flessibilità di orario</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Materiali personalizzati</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-header text-white text-center py-4" style="background-color: var(--color-secondary);">
+                            <h4 class="mb-0">Per Bambini e Ragazzi</h4>
+                        </div>
+                        <div class="card-body p-4">
+                            <p>Lezioni giocose e interattive per avvicinare i più giovani al russo. Per famiglie bilingui o bambini curiosi di nuove lingue.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Approccio ludico e creativo</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Giochi, canzoni, cartoni animati</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Lezioni brevi e dinamiche</li>
+                                <li class="mb-2"><i class="fas-check-circle text-success me-2"></i> Supporto per famiglie bilingui</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-header text-white text-center py-4" style="background-color: var(--color-accent);">
+                            <h4 class="mb-0">Per Studenti Universitari</h4>
+                        </div>
+                        <div class="card-body p-4">
+                            <p>Supporto per esami universitari, preparazione a certificazioni (TORFL) o approfondimento linguistico per studi specialistici.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Preparazione esami universitari</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Certificazioni TORFL (A1-C2)</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Supporto per tesi e ricerche</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Letteratura e cultura russa</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Как это работает -->
+    <section class="py-5">
+        <div class="container py-5">
+            <h2 class="section-title">Come funziona</h2>
+            
+            <div class="row text-center mt-5">
+                <div class="col-md-3 mb-4">
+                    <div class="step-number mb-3" style="width: 60px; height: 60px; line-height: 60px; background-color: var(--color-secondary); color: white; border-radius: 50%; margin: 0 auto; font-size: 1.5rem; font-weight: bold;">1</div>
+                    <h5>Contatto iniziale</h5>
+                    <p>Prenoti una lezione di prova gratuita per conoscerci e definire i tuoi obiettivi.</p>
+                </div>
+                
+                <div class="col-md-3 mb-4">
+                    <div class="step-number mb-3" style="width: 60px; height: 60px; line-height: 60px; background-color: var(--color-secondary); color: white; border-radius: 50%; margin: 0 auto; font-size: 1.5rem; font-weight: bold;">2</div>
+                    <h5>Piano personalizzato</h5>
+                    <p>Creo un percorso su misura per te, con obiettivi chiari e materiali adatti.</p>
+                </div>
+                
+                <div class="col-md-3 mb-4">
+                    <div class="step-number mb-3" style="width: 60px; height: 60px; line-height: 60px; background-color: var(--color-secondary); color: white; border-radius: 50%; margin: 0 auto; font-size: 1.5rem; font-weight: bold;">3</div>
+                    <h5>Lezioni regolari</h5>
+                    <p>Incontri settimanali online, con esercizi pratici e feedback costante.</p>
+                </div>
+                
+                <div class="col-md-3 mb-4">
+                    <div class="step-number mb-3" style="width: 60px; height: 60px; line-height: 60px; background-color: var(--color-secondary); color: white; border-radius: 50%; margin: 0 auto; font-size: 1.5rem; font-weight: bold;">4</div>
+                    <h5>Progressi visibili</h5>
+                    <p>Monitoriamo insieme i tuoi progressi e celebriamo ogni traguardo raggiunto.</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#contact" class="btn btn-primary-custom btn-lg">Inizia il tuo percorso</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section id="reviews" class="py-5" style="background-color: var(--color-light);">
+        <div class="container py-5">
+            <h2 class="section-title">Cosa dicono i miei studenti</h2>
+            
+            <div class="row mt-5">
+                <div class="col-lg-6 mb-4">
+                    <div class="testimonial-card">
+                        <p>"Anna è un'insegnante eccezionale. Dopo solo 3 mesi di lezioni riesco già a sostenere conversazioni basilari in russo. Il suo metodo è chiaro e le lezioni sono sempre interessanti."</p>
+                        <p class="testimonial-author">— Marco, Milano</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="testimonial-card">
+                        <p>"Sto studiando russo per lavoro e le lezioni con Anna sono state fondamentali. Sa adattarsi alle esigenze professionali e il suo approccio pratico mi ha aiutato tantissimo."</p>
+                        <p class="testimonial-author">— Elena, Roma</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="testimonial-card">
+                        <p>"Mia figlia di 10 anni segue lezioni con Anna da un anno e ne è entusiasta. Anna ha un modo speciale di coinvolgere i bambini, rendendo l'apprendimento un gioco."</p>
+                        <p class="testimonial-author">— Francesca, Bologna</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="testimonial-card">
+                        <p>"Preparandomi per l'esame di russo all'università, Anna mi ha aiutato a superare le mie difficoltà con la grammatica. Paziente, competente e sempre disponibile."</p>
+                        <p class="testimonial-author">— Luca, Firenze</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты и форма -->
+    <section id="contact" class="py-5">
+        <div class="container py-5">
+            <h2 class="section-title">Prenota la tua lezione di prova gratuita</h2>
+            <p class="text-center mb-5">30 minuti per conoscerci, valutare il tuo livello e definire il percorso più adatto a te.</p>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Nome e Cognome" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="tel" class="form-control" placeholder="Telefono (WhatsApp preferito)">
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-control" required>
+                                        <option value="" disabled selected>Seleziona il tipo di corso</option>
+                                        <option>Per Adulti</option>
+                                        <option>Per Bambini/Ragazzi</option>
+                                        <option>Per Studenti Universitari</option>
+                                        <option>Non sono sicuro/a</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="5" placeholder="Raccontami i tuoi obiettivi e il tuo livello attuale (principiante, intermedio...)" required></textarea>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary-custom btn-lg px-5">Prenota lezione gratuita</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="row mt-5 text-center">
+                        <div class="col-md-4 mb-4">
+                            <div class="p-3">
+                                <i class="fas fa-envelope fa-2x mb-3" style="color: var(--color-secondary);"></i>
+                                <h5>Email</h5>
+                                <p>anna@insegnantedirusso.it</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="p-3">
+                                <i class="fab fa-whatsapp fa-2x mb-3" style="color: var(--color-secondary);"></i>
+                                <h5>WhatsApp</h5>
+                                <p>+39 123 456 7890</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="p-3">
+                                <i class="fas fa-video fa-2x mb-3" style="color: var(--color-secondary);"></i>
+                                <h5>Lezioni Online</h5>
+                                <p>Zoom, Skype, Meet</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="mb-4 text-white">Anna Ivanova</h4>
+                    <p>Insegnante di russo specializzata per studenti italiani. Lezioni online personalizzate per adulti, bambini e studenti.</p>
+                    <div class="social-links mt-4">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-4 text-white">Link veloci</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#about">Chi sono</a></li>
+                        <li class="mb-2"><a href="#method">Il mio metodo</a></li>
+                        <li class="mb-2"><a href="#courses">Corsi</a></li>
+                        <li class="mb-2"><a href="#contact">Contatti</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-4 text-white">Orari di contatto</h5>
+                    <p>Lunedì - Venerdì: 9:00 - 20:00<br>
+                    Sabato: 10:00 - 14:00<br>
+                    Domenica: Chiuso</p>
+                    <p>Le lezioni si svolgono online, flessibili secondo le tue esigenze.</p>
+                </div>
+            </div>
+            
+            <hr class="mt-4" style="border-color: rgba(255,255,255,0.1);">
+            
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2023 Anna Ivanova - Insegnante di Russo. Tutti i diritti riservati.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="me-3">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Плавная прокрутка -->
+    <script>
+        // Плавная прокрутка для навигационных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Обработка формы
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Здесь обычно код для отправки формы на сервер
+            // Для демо-версии просто показываем сообщение
+            
+            alert('Grazie per la tua richiesta! Ti contatterò entro 24 ore per confermare la lezione di prova.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
