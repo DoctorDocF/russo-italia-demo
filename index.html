@@ -3,530 +3,743 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anna Ivanova - Lezioni di Russo Online per Italiani</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="insegnante russo, lezioni di russo, imparare russo, russo per italiani, lingua russa online">
+    <meta name="description" content="Lezioni personalizzate di russo online con insegnante madrelingua russa. Impara a parlare russo dal primo giorno con metodo comunicativo speciale.">
+    <meta property="og:site_name" content="Nadezhda Hadarina - Insegnante di Russo">
+    <meta property="og:title" content="Nadezhda Hadarina - Insegnante di Russo per Italiani">
+    <meta property="og:description" content="Impara a parlare russo dal primo giorno con insegnante madrelingua russa. Metodo comunicativo speciale per risultati rapidi.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://insegnantedirusso.it">
+    <meta property="og:image" content="https://insegnantedirusso.it/img/ogp.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Nadezhda Hadarina - Insegnante di Russo per Italiani | Lezioni Online</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Google Fonts для итальянской элегантности -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome для иконок -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Стили -->
     <style>
         :root {
-            --color-primary: #2C3E50;    /* Глубокий синий - элегантность */
-            --color-secondary: #A67C52;  /* Терракотовый - тепло */
-            --color-accent: #4A6FA5;     /* Мягкий синий */
-            --color-light: #F8F9FA;      /* Светлый фон */
-            --color-text: #333333;       /* Основной текст */
+            --header-bg: #F5F0E7;    /* Первый цвет - хедер (светлый беж) */
+            --accent-bg: #E8E2D6;    /* Второй цвет - акцентный (средний беж) */
+            --main-bg: #FFFDF8;      /* Третий цвет - основной фон (светлый ivory) */
+            --text-dark: #2C3E50;    /* Темный текст */
+            --text-medium: #5D6D7E;  /* Средний текст */
+            --text-light: #7F8C8D;   /* Светлый текст */
+            --accent-color: #A67C52; /* Акцентный цвет (терракотовый) */
+            --accent-hover: #8B6B47; /* Акцентный цвет при наведении */
         }
         
         body {
-            font-family: 'Roboto', sans-serif;
-            color: var(--color-text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    background: 
+        /* Полупрозрачный белый слой поверх изображения */
+        linear-gradient(rgba(255, 253, 248, 0.80), rgba(255, 253, 248, 0.80)),
+        /* Сама картинка */
+        url('file:///D:/flowers.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
         
-        h1, h2, h3, h4, h5 {
+        h1, h2, h3, h4, h5, .serif {
             font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            color: var(--color-primary);
+            font-weight: 500;
+            color: var(--text-dark);
+            line-height: 1.3;
         }
         
-        .section-title {
+        /* Плавные анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        
+        /* Хедер с первым цветом */
+        .hero-header {
+            background-color: var(--header-bg);
+            background-image: 
+                linear-gradient(135deg, var(--header-bg) 0%, rgba(255,253,248,0.9) 100%),
+                radial-gradient(circle at 20% 50%, rgba(166, 124, 82, 0.1) 0%, transparent 50%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
             position: relative;
-            margin-bottom: 3rem;
-            text-align: center;
+            overflow: hidden;
+            padding: 140px 0 100px;
         }
         
-        .section-title:after {
+        /* Декоративные элементы в хедере */
+        .header-decoration {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(166, 124, 82, 0.05) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .header-decoration:nth-child(1) {
+            top: 10%;
+            right: 5%;
+            animation-delay: 0s;
+        }
+        
+        .header-decoration:nth-child(2) {
+            bottom: 15%;
+            left: 8%;
+            width: 200px;
+            height: 200px;
+            animation-delay: 2s;
+        }
+        
+        /* Главный заголовок */
+        .main-title {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-dark) 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .main-title::after {
             content: '';
             position: absolute;
             bottom: -15px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-color), transparent);
+            animation: fadeIn 1.2s ease-out;
+        }
+        
+        /* Подзаголовок с эффектом свечения */
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-medium);
+            margin-bottom: 3rem;
+            animation: fadeIn 1.4s ease-out;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .hero-subtitle::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: translateY(-50%) scale(1); opacity: 0.7; }
+            50% { transform: translateY(-50%) scale(1.2); opacity: 1; }
+        }
+        
+        /* Контентные блоки - без квадратиков! */
+        .content-block {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        /* Четные секции со вторым цветом */
+        .content-block:nth-child(even) {
+            background-color: var(--accent-bg);
+            background-image: 
+                linear-gradient(135deg, var(--accent-bg) 0%, rgba(255,253,248,0.9) 100%);
+            position: relative;
+        }
+        
+        /* Декоративные волны между секциями */
+        .wave-divider {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: var(--main-bg);
+            -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35,6.36,119.13-6.25C750.77,35.55,777.39,25,806.67,25,862.86,25,908.34,62.88,944.9,86.87,978.22,108.3,1012.9,109,1055,106V0Z" opacity=".5" class="shape-fill"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path></svg>');
+            mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35,6.36,119.13-6.25C750.77,35.55,777.39,25,806.67,25,862.86,25,908.34,62.88,944.9,86.87,978.22,108.3,1012.9,109,1055,106V0Z" opacity=".5" class="shape-fill"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path></svg>');
+            -webkit-mask-size: cover;
+            mask-size: cover;
+            z-index: 1;
+        }
+        
+        .content-block:nth-child(even) .wave-divider {
+            background: var(--main-bg);
+            top: -1px;
+            bottom: auto;
+            transform: rotate(180deg);
+        }
+        
+        /* Заголовки секций */
+        .section-title {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1.5rem;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background-color: var(--color-secondary);
+            background: var(--accent-color);
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            border-radius: 2px;
         }
         
-        /* Hero секция */
-        .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80');
-            background-size: cover;
-            background-position: center;
+        /* Текстовые блоки с плавным появлением */
+        .text-reveal {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
+            animation-delay: calc(var(--i, 0) * 0.1s);
+        }
+        
+        /* Элементы списка с анимацией */
+        .styled-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+        
+        .styled-list li {
+            padding: 1rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            border-bottom: 1px solid rgba(44, 62, 80, 0.05);
+            animation: fadeIn 0.6s ease-out forwards;
+            animation-delay: calc(var(--i, 0) * 0.1s);
+            opacity: 0;
+        }
+        
+        .styled-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+        
+        .styled-list li:hover::before {
+            transform: translateX(5px);
+        }
+        
+        /* Цитаты с эффектом свечения */
+        .elegant-quote {
+            padding: 2.5rem;
+            margin: 3rem 0;
+            position: relative;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, 
+                rgba(166, 124, 82, 0.03) 0%, 
+                rgba(245, 240, 231, 0.1) 100%);
+            border-left: 3px solid var(--accent-color);
+            border-radius: 0 10px 10px 0;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .elegant-quote::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--accent-color);
+            opacity: 0.2;
+            font-family: serif;
+        }
+        
+        /* Кнопки с эффектом перелива */
+        .elegant-btn {
+            background: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            border-radius: 0;
+            padding: 14px 35px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .elegant-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(166, 124, 82, 0.1), transparent);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+        
+        .elegant-btn:hover {
             color: white;
-            padding: 120px 0 80px;
-            min-height: 90vh;
+            background: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(166, 124, 82, 0.2);
+        }
+        
+        .elegant-btn:hover::before {
+            left: 100%;
+        }
+        
+        .elegant-btn-primary {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        .elegant-btn-primary:hover {
+            background: var(--accent-hover);
+            border-color: var(--accent-hover);
+        }
+        
+        /* Навигация */
+        .navbar-elegant {
+            background: rgba(245, 240, 231, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(232, 226, 214, 0.5);
+            padding: 1.2rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand-elegant {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            position: relative;
+        }
+        
+        .navbar-brand-elegant::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .navbar-brand-elegant:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link-elegant {
+            color: var(--text-medium);
+            font-weight: 500;
+            padding: 0.5rem 1.2rem;
+            margin: 0 0.3rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link-elegant::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link-elegant:hover {
+            color: var(--accent-color);
+        }
+        
+        .nav-link-elegant:hover::after {
+            width: 100%;
+        }
+        
+        /* Контакты - без квадратиков! */
+        .contact-item {
+            text-align: center;
+            padding: 2rem;
+            margin: 1rem 0;
+            position: relative;
+            animation: fadeIn 0.8s ease-out;
+            animation-delay: calc(var(--i, 0) * 0.2s);
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
             display: flex;
             align-items: center;
-        }
-        
-        .hero h1 {
+            justify-content: center;
+            margin: 0 auto 1.5rem;
             color: white;
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(166, 124, 82, 0.2);
+            transition: all 0.3s ease;
+            animation: float 3s ease-in-out infinite;
         }
         
-        .hero-subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(166, 124, 82, 0.3);
         }
         
-        .btn-primary-custom {
-            background-color: var(--color-secondary);
-            border-color: var(--color-secondary);
+        .contact-text {
+            color: var(--text-dark);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-detail {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+            word-break: break-word;
+        }
+        
+        /* Таблица в элегантном стиле */
+        .elegant-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 2.5rem 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .elegant-table th {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
             color: white;
-            padding: 12px 30px;
             font-weight: 500;
-            border-radius: 2px;
-            transition: all 0.3s;
+            padding: 1.2rem 1.5rem;
+            text-align: left;
+            font-family: 'Playfair Display', serif;
         }
         
-        .btn-primary-custom:hover {
-            background-color: #8a623f;
-            border-color: #8a623f;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .elegant-table td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(232, 226, 214, 0.5);
+            background: white;
+            transition: all 0.3s ease;
         }
         
-        /* О преподавателе */
-        .about-img {
-            border-radius: 5px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .about-img:hover {
-            transform: translateY(-5px);
-        }
-        
-        /* Карточки */
-        .feature-card {
-            border: none;
-            border-radius: 5px;
-            transition: all 0.3s;
-            height: 100%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--color-secondary);
-            margin-bottom: 1rem;
-        }
-        
-        /* Отзывы */
-        .testimonial-card {
-            border-left: 4px solid var(--color-secondary);
-            padding-left: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .testimonial-author {
-            color: var(--color-primary);
-            font-weight: 500;
-            margin-top: 1rem;
-        }
-        
-        /* Форма */
-        .contact-form {
-            background-color: white;
-            padding: 2.5rem;
-            border-radius: 5px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-        
-        .form-control {
-            border-radius: 2px;
-            border: 1px solid #ddd;
-            padding: 12px 15px;
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-control:focus {
-            border-color: var(--color-accent);
-            box-shadow: 0 0 0 0.25rem rgba(74, 111, 165, 0.25);
+        .elegant-table tr:hover td {
+            background: rgba(245, 240, 231, 0.3);
         }
         
         /* Футер */
-        .footer {
-            background-color: var(--color-primary);
-            color: rgba(255,255,255,0.8);
+        .footer-elegant {
+            background: linear-gradient(135deg, var(--text-dark), #1a2530);
+            color: rgba(255, 255, 255, 0.8);
             padding: 4rem 0 2rem;
+            position: relative;
+            overflow: hidden;
         }
         
-        .footer a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            transition: color 0.3s;
+        .footer-elegant::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
         }
         
-        .footer a:hover {
+        .footer-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
             color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.8rem;
         }
         
-        .social-links a {
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
             display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .social-elegant {
+            display: flex;
+            gap: 12px;
+            margin-top: 1.5rem;
+        }
+        
+        .social-elegant a {
             width: 40px;
             height: 40px;
-            background-color: rgba(255,255,255,0.1);
             border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            margin-right: 10px;
-            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
         }
         
-        .social-links a:hover {
-            background-color: var(--color-secondary);
+        .social-elegant a:hover {
+            background: var(--accent-color);
             transform: translateY(-3px);
         }
         
         /* Адаптивность */
-        @media (max-width: 768px) {
-            .hero h1 {
+        @media (max-width: 1200px) {
+            .main-title {
+                font-size: 4rem;
+            }
+            
+            .section-title {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .main-title {
+                font-size: 3.2rem;
+            }
+            
+            .section-title {
                 font-size: 2.5rem;
             }
             
-            .hero {
-                padding: 100px 0 60px;
+            .content-block {
+                padding: 80px 0;
+            }
+            
+            .hero-header {
+                padding: 120px 0 80px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-header {
                 text-align: center;
+                padding: 100px 0 60px;
+            }
+            
+            .main-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .hero-subtitle {
+                padding-left: 0;
+            }
+            
+            .hero-subtitle::before {
+                display: none;
+            }
+            
+            .elegant-table {
+                font-size: 0.9rem;
+            }
+            
+            .elegant-table th,
+            .elegant-table td {
+                padding: 0.8rem 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .main-title {
+                font-size: 2rem;
             }
             
             .section-title {
                 font-size: 1.8rem;
             }
+            
+            .elegant-btn {
+                padding: 12px 25px;
+                font-size: 0.95rem;
+            }
+            
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
         }
+        
+        /* Кастомный скроллбар */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--header-bg);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-hover);
+        }
+        
+        /* Утилиты */
+        .opacity-0 {
+            opacity: 0;
+        }
+        
+        .opacity-100 {
+            opacity: 1;
+        }
+        /* === ДЛЯ МОБИЛЬНЫХ === */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* чтобы не было лагов на мобильных */
+        background-size: cover;
+    }
+}
     </style>
 </head>
 <body>
+    <!-- Декоративные элементы в хедере -->
+    <div class="header-decoration"></div>
+    <div class="header-decoration"></div>
+
     <!-- Навигация -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm py-3">
+    <nav class="navbar navbar-expand-lg navbar-elegant fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#" style="color: var(--color-primary); font-family: 'Playfair Display', serif;">
-                Anna Ivanova
-            </a>
+            <a class="navbar-brand navbar-brand-elegant" href="#">Nadezhda Hadarina</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">Chi Sono</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#method">Il Metodo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#courses">Corsi</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#reviews">Recensioni</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contatti</a></li>
-                    <li class="nav-item ms-lg-2">
-                        <a class="btn btn-primary-custom" href="#contact">Lezione di Prova</a>
+                    <li class="nav-item"><a class="nav-link nav-link-elegant" href="#method">Metodo</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-elegant" href="#benefits">Vantaggi</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-elegant" href="#program">Programma</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-elegant" href="#pricing">Prezzi</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-elegant" href="#contact">Contatti</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="elegant-btn elegant-btn-primary" href="#contact">Lezione Gratuita</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Новый Hero-блок в стиле "Editorial Italiano / Quiet Authority" -->
-<section class="hero-editorial">
-    <div class="container">
-        <div class="row justify-content-center">
-            <!-- Основной текстовый блок - узкая колонка как в глянцевом журнале -->
-            <div class="col-lg-8 col-xl-7">
-                <!-- Декоративная верхняя линия -->
-                <div class="editorial-line"></div>
-                
-                <!-- Заголовок в стиле luxury брендов -->
-                <h1 class="editorial-title">
-                    <span class="title-line">L'eleganza della</span>
-                    <span class="title-line">lingua russa</span>
-                </h1>
-                
-                <!-- Подзаголовок - минималистичный -->
-                <p class="editorial-subtitle">
-                    Un dialogo tranquillo con la cultura attraverso la lingua
-                </p>
-                
-                <!-- Горизонтальный разделитель -->
-                <div class="editorial-divider"></div>
-                
-                <!-- Основной текст блока - редакционный стиль -->
-                <div class="editorial-content">
-                    <p>
-                        In un mondo di comunicazione veloce, il russo offre una rara profondità. 
-                        Non è solo una lingua, ma una chiave per comprendere una delle culture 
-                        più ricche e complesse del mondo.
-                    </p>
-                    
-                    <!-- Цитата в стиле глянцевого журнала -->
-                    <blockquote class="editorial-quote">
-                        <p>“La vera padronanza di una lingua inizia quando le parole 
-                        diventano pensiero e il pensiero diventa espressione naturale.”</p>
-                    </blockquote>
-                    
-                    <p>
-                        Le mie lezioni sono un invito a questo viaggio. Senza fretta, 
-                        con attenzione al dettaglio e rispetto per la complessità.
-                    </p>
-                </div>
-                
-                <!-- Минималистичная CTA -->
-                <div class="editorial-cta">
-                    <a href="#contact" class="btn-editorial">
-                        <span class="btn-text">Iniziare il dialogo</span>
-                        <span class="btn-line"></span>
-                    </a>
-                    <p class="cta-note">
-                        Prima lezione conoscitiva · 30 minuti · Senza impegno
-                    </p>
-                </div>
-                
-                <!-- Декоративная нижняя линия -->
-                <div class="editorial-line"></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Стили для нового Hero-блока -->
-<style>
-    /* Основные цвета в стиле Loro Piana / Brunello Cucinelli */
-    :root {
-        --editorial-bg: #FCFAF5; /* Теплый ivory */
-        --editorial-text: #3C3C3C; /* Глубокий теплый серый */
-        --editorial-accent: #8B7355; /* Кашемировый беж/коричневый */
-        --editorial-line: #E8E5DE; /* Светлый беж для линий */
-        --editorial-light: #A8A59C; /* Вторичный серый */
-    }
-    
-    /* Hero-блок в редакционном стиле */
-    .hero-editorial {
-        background-color: var(--editorial-bg);
-        color: var(--editorial-text);
-        padding: 120px 0 100px;
-        min-height: 90vh;
-        display: flex;
-        align-items: center;
-        font-family: 'Roboto', sans-serif;
-    }
-    
-    /* Декоративные линии */
-    .editorial-line {
-        height: 1px;
-        background-color: var(--editorial-line);
-        margin: 40px auto;
-        width: 100px;
-    }
-    
-    /* Заголовок в стиле luxury брендов */
-    .editorial-title {
-        font-family: 'Playfair Display', serif;
-        font-weight: 400;
-        font-size: 3.5rem;
-        line-height: 1.1;
-        margin: 60px 0 30px;
-        text-align: center;
-        letter-spacing: -0.02em;
-    }
-    
-    .title-line {
-        display: block;
-    }
-    
-    .editorial-title .title-line:first-child {
-        font-weight: 300;
-        opacity: 0.9;
-    }
-    
-    .editorial-title .title-line:last-child {
-        font-weight: 400;
-        margin-top: -5px;
-    }
-    
-    /* Подзаголовок */
-    .editorial-subtitle {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 300;
-        font-size: 1.2rem;
-        text-align: center;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--editorial-light);
-        margin-bottom: 40px;
-    }
-    
-    /* Горизонтальный разделитель */
-    .editorial-divider {
-        width: 60px;
-        height: 1px;
-        background-color: var(--editorial-accent);
-        margin: 50px auto;
-    }
-    
-    /* Основной текст в узкой колонке */
-    .editorial-content {
-        max-width: 700px;
-        margin: 0 auto;
-        line-height: 1.8;
-        font-size: 1.1rem;
-        color: var(--editorial-text);
-    }
-    
-    .editorial-content p {
-        margin-bottom: 1.8rem;
-        text-align: justify;
-        hyphens: auto;
-    }
-    
-    /* Цитата в стиле глянцевого журнала */
-    .editorial-quote {
-        border-left: 2px solid var(--editorial-accent);
-        padding-left: 25px;
-        margin: 40px 0;
-        font-style: italic;
-        color: var(--editorial-light);
-    }
-    
-    .editorial-quote p {
-        font-size: 1.2rem;
-        line-height: 1.6;
-        margin-bottom: 0;
-    }
-    
-    /* Минималистичная CTA */
-    .editorial-cta {
-        text-align: center;
-        margin-top: 60px;
-    }
-    
-    .btn-editorial {
-        display: inline-block;
-        color: var(--editorial-text);
-        text-decoration: none;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 400;
-        font-size: 1rem;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        padding: 0 0 8px 0;
-        position: relative;
-        transition: all 0.3s ease;
-        background: none;
-        border: none;
-    }
-    
-    .btn-text {
-        position: relative;
-        z-index: 1;
-    }
-    
-    .btn-line {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background-color: var(--editorial-accent);
-        transition: all 0.3s ease;
-    }
-    
-    .btn-editorial:hover {
-        color: var(--editorial-accent);
-    }
-    
-    .btn-editorial:hover .btn-line {
-        height: 2px;
-        background-color: var(--editorial-accent);
-    }
-    
-    .cta-note {
-        font-size: 0.85rem;
-        color: var(--editorial-light);
-        margin-top: 15px;
-        font-style: italic;
-    }
-    
-    /* Адаптивность */
-    @media (max-width: 768px) {
-        .hero-editorial {
-            padding: 80px 0 60px;
-        }
-        
-        .editorial-title {
-            font-size: 2.5rem;
-            margin: 40px 0 20px;
-        }
-        
-        .editorial-subtitle {
-            font-size: 1rem;
-        }
-        
-        .editorial-content {
-            padding: 0 20px;
-            font-size: 1rem;
-        }
-        
-        .editorial-quote p {
-            font-size: 1.1rem;
-        }
-    }
-    
-    @media (max-width: 576px) {
-        .editorial-title {
-            font-size: 2rem;
-        }
-        
-        .editorial-line {
-            margin: 30px auto;
-        }
-        
-        .editorial-divider {
-            margin: 30px auto;
-        }
-    }
-</style>
-    </section>
-
-    <!-- О преподавателе -->
-    <section id="about" class="py-5" style="background-color: var(--color-light);">
-        <div class="container py-5">
-            <h2 class="section-title">La tua guida nel mondo russo</h2>
+    <!-- Герой -->
+    <section class="hero-header">
+        <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Anna insegna russo" 
-                         class="img-fluid rounded shadow about-img">
-                </div>
-                <div class="col-lg-6">
-                    <h3 class="mb-4">Ciao, sono Anna</h3>
-                    <p>Insegnante di russo con oltre 10 anni di esperienza, specializzata nell'insegnamento a studenti italiani. Dopo la laurea in Linguistica all'Università Statale di Mosca e un master in Didattica delle Lingue Straniere, ho deciso di dedicarmi all'insegnamento della mia lingua madre.</p>
-                    <p>Vivo in Italia da 6 anni e conosco perfettamente le sfide specifiche che gli italiani affrontano nell'apprendimento del russo. Il mio approccio combina <strong>rigore metodologico</strong> con <strong>calore umano</strong>, creando un ambiente dove è bello imparare.</p>
+                <div class="col-lg-8">
+                    <h1 class="main-title">Lingua parlata russa con insegnante russo</h1>
                     
-                    <div class="row mt-4">
-                        <div class="col-md-6">
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Laureata in Linguistica</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Certificata nell'insegnamento del russo come lingua straniera</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 10+ anni di esperienza</li>
-                            </ul>
+                    <p class="hero-subtitle mb-4">
+                        Nadezhda Hadarina
+                    </p>
+                    
+                    <p class="lead mb-5" style="font-size: 1.3rem; color: var(--text-medium);">
+                        <span style="color: var(--accent-color); font-weight: 500;">Cominciate a parlare russo dal primo giorno.</span>
+                    </p>
+                    
+                    <div class="d-flex flex-wrap gap-4 mb-5">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-graduation-cap me-2" style="color: var(--accent-color);"></i>
+                            <span>Diploma Università Statale di Mosca</span>
                         </div>
-                        <div class="col-md-6">
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Specializzata per studenti italiani</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Fluente in italiano e inglese</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Insegnante per adulti e bambini</li>
-                            </ul>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-comments me-2" style="color: var(--accent-color);"></i>
+                            <span>Metodo comunicativo speciale</span>
                         </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-clock me-2" style="color: var(--accent-color);"></i>
+                            <span>Dal 15€ per 1 lezione</span>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex flex-column flex-md-row gap-3">
+                        <a href="#contact" class="elegant-btn elegant-btn-primary">
+                            Registrarsi per 1 lezione gratuitamente
+                        </a>
+                        <a href="#method" class="elegant-btn">
+                            Scopri il Metodo
+                        </a>
                     </div>
                 </div>
             </div>
@@ -534,255 +747,259 @@
     </section>
 
     <!-- Метод -->
-    <section id="method" class="py-5">
-        <div class="container py-5">
-            <h2 class="section-title">Il mio metodo: efficace e su misura</h2>
-            <p class="text-center mb-5 mx-auto" style="max-width: 800px;">Credo che l'apprendimento di una lingua debba essere un'esperienza piacevole e personalizzata. Per questo ho sviluppato un metodo che si adatta alle tue esigenze specifiche.</p>
+    <section id="method" class="content-block">
+        <div class="wave-divider"></div>
+        <div class="container">
+            <h2 class="section-title">Il Mio Approccio</h2>
             
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="card feature-card h-100 p-4">
-                        <div class="feature-icon">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <h4>Comunicativo</h4>
-                        <p>Fin dalla prima lezione parliamo in russo. L'obiettivo è sviluppare la capacità di comunicare in situazioni reali.</p>
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <p class="text-center mb-5" style="font-size: 1.2rem; color: var(--text-medium);">
+                        <em>La lingua russa è considerata una delle lingue più difficili nel mondo per imparare.</em>
+                    </p>
+                    
+                    <div class="text-reveal">
+                        <p>I cervelli degli stranieri levano il bollore da prime lezioni:</p>
+                        
+                        <ul class="styled-list">
+                            <li style="--i: 1">Molte regole grammaticali ed eccezioni</li>
+                            <li style="--i: 2">Tutti i nomi e aggettivi sono inclinati (12 forme del sostantivo e 36 forme dell'aggettivo)</li>
+                            <li style="--i: 3">L'ordine delle parole non è fisso e cambia il significato</li>
+                            <li style="--i: 4">L'accento in ogni parola cambia posizione</li>
+                        </ul>
                     </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3">
-                    <div class="card feature-card h-100 p-4">
-                        <div class="feature-icon">
-                            <i class="fas fa-user-cog"></i>
-                        </div>
-                        <h4>Personalizzato</h4>
-                        <p>Ogni corso è creato su misura in base ai tuoi obiettivi, interessi e stile di apprendimento.</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3">
-                    <div class="card feature-card h-100 p-4">
-                        <div class="feature-icon">
-                            <i class="fas fa-gamepad"></i>
-                        </div>
-                        <h4>Interattivo</h4>
-                        <p>Utilizzo materiali autentici, giochi, video e risorse digitali per rendere le lezioni vive e coinvolgenti.</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3">
-                    <div class="card feature-card h-100 p-4">
-                        <div class="feature-icon">
-                            <i class="fas fa-culture"></i>
-                        </div>
-                        <h4>Culturale</h4>
-                        <p>Imparare una lingua significa anche conoscere la sua cultura. Scopriremo insieme tradizioni, letteratura e vita quotidiana russa.</p>
+                    
+                    <blockquote class="elegant-quote">
+                        Imparando secondo metodica comunicativa, cominciate a parlare russo da prime lezioni.
+                    </blockquote>
+                    
+                    <div class="text-reveal" style="--i: 5">
+                        <p>
+                            Mi chiamo <strong>Nadezhda Hadarina</strong>. Sono russa, vivo in Italia da più di 5 anni 
+                            e insegno la lingua russa in italiano.
+                        </p>
+                        
+                        <p>
+                            Ho il diploma dell'Università statale di Mosca di M.V. Lomonosov sulla specialità 
+                            «Metodica dell'insegnamento della lingua russa come la lingua straniera».
+                        </p>
+                        
+                        <p>
+                            Materiale grammaticale è imparato gradualmente — secondo il grado di difficoltà. 
+                            Parallelamente le costruzioni grammaticali e lessicali sono introdotte nel discorso attivo.
+                        </p>
+                        
+                        <p>
+                            <strong>Tutto questo permette di imparare la parlata russa in modo rapido, 
+                            grado per grado "internandosi nella parte" della persona russa.</strong>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Курсы -->
-    <section id="courses" class="py-5" style="background-color: var(--color-light);">
-        <div class="container py-5">
-            <h2 class="section-title">Corsi su misura per te</h2>
-            
-            <div class="row g-4 mt-4">
-                <div class="col-lg-4">
-                    <div class="card h-100 border-0 shadow">
-                        <div class="card-header text-white text-center py-4" style="background-color: var(--color-primary);">
-                            <h4 class="mb-0">Per Adulti</h4>
-                        </div>
-                        <div class="card-body p-4">
-                            <p>Per professionisti, viaggiatori o appassionati della cultura russa. Corsi generali o specializzati (business, viaggi, preparazione ad esami).</p>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Conversazione quotidiana e professionale</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Lessico specifico per i tuoi interessi</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Flessibilità di orario</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Materiali personalizzati</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4">
-                    <div class="card h-100 border-0 shadow">
-                        <div class="card-header text-white text-center py-4" style="background-color: var(--color-secondary);">
-                            <h4 class="mb-0">Per Bambini e Ragazzi</h4>
-                        </div>
-                        <div class="card-body p-4">
-                            <p>Lezioni giocose e interattive per avvicinare i più giovani al russo. Per famiglie bilingui o bambini curiosi di nuove lingue.</p>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Approccio ludico e creativo</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Giochi, canzoni, cartoni animati</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Lezioni brevi e dinamiche</li>
-                                <li class="mb-2"><i class="fas-check-circle text-success me-2"></i> Supporto per famiglie bilingui</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4">
-                    <div class="card h-100 border-0 shadow">
-                        <div class="card-header text-white text-center py-4" style="background-color: var(--color-accent);">
-                            <h4 class="mb-0">Per Studenti Universitari</h4>
-                        </div>
-                        <div class="card-body p-4">
-                            <p>Supporto per esami universitari, preparazione a certificazioni (TORFL) o approfondimento linguistico per studi specialistici.</p>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Preparazione esami universitari</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Certificazioni TORFL (A1-C2)</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Supporto per tesi e ricerche</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Letteratura e cultura russa</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Как это работает -->
-    <section class="py-5">
-        <div class="container py-5">
-            <h2 class="section-title">Come funziona</h2>
-            
-            <div class="row text-center mt-5">
-                <div class="col-md-3 mb-4">
-                    <div class="step-number mb-3" style="width: 60px; height: 60px; line-height: 60px; background-color: var(--color-secondary); color: white; border-radius: 50%; margin: 0 auto; font-size: 1.5rem; font-weight: bold;">1</div>
-                    <h5>Contatto iniziale</h5>
-                    <p>Prenoti una lezione di prova gratuita per conoscerci e definire i tuoi obiettivi.</p>
-                </div>
-                
-                <div class="col-md-3 mb-4">
-                    <div class="step-number mb-3" style="width: 60px; height: 60px; line-height: 60px; background-color: var(--color-secondary); color: white; border-radius: 50%; margin: 0 auto; font-size: 1.5rem; font-weight: bold;">2</div>
-                    <h5>Piano personalizzato</h5>
-                    <p>Creo un percorso su misura per te, con obiettivi chiari e materiali adatti.</p>
-                </div>
-                
-                <div class="col-md-3 mb-4">
-                    <div class="step-number mb-3" style="width: 60px; height: 60px; line-height: 60px; background-color: var(--color-secondary); color: white; border-radius: 50%; margin: 0 auto; font-size: 1.5rem; font-weight: bold;">3</div>
-                    <h5>Lezioni regolari</h5>
-                    <p>Incontri settimanali online, con esercizi pratici e feedback costante.</p>
-                </div>
-                
-                <div class="col-md-3 mb-4">
-                    <div class="step-number mb-3" style="width: 60px; height: 60px; line-height: 60px; background-color: var(--color-secondary); color: white; border-radius: 50%; margin: 0 auto; font-size: 1.5rem; font-weight: bold;">4</div>
-                    <h5>Progressi visibili</h5>
-                    <p>Monitoriamo insieme i tuoi progressi e celebriamo ogni traguardo raggiunto.</p>
-                </div>
-            </div>
-            
-            <div class="text-center mt-5">
-                <a href="#contact" class="btn btn-primary-custom btn-lg">Inizia il tuo percorso</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Отзывы -->
-    <section id="reviews" class="py-5" style="background-color: var(--color-light);">
-        <div class="container py-5">
-            <h2 class="section-title">Cosa dicono i miei studenti</h2>
-            
-            <div class="row mt-5">
-                <div class="col-lg-6 mb-4">
-                    <div class="testimonial-card">
-                        <p>"Anna è un'insegnante eccezionale. Dopo solo 3 mesi di lezioni riesco già a sostenere conversazioni basilari in russo. Il suo metodo è chiaro e le lezioni sono sempre interessanti."</p>
-                        <p class="testimonial-author">— Marco, Milano</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-6 mb-4">
-                    <div class="testimonial-card">
-                        <p>"Sto studiando russo per lavoro e le lezioni con Anna sono state fondamentali. Sa adattarsi alle esigenze professionali e il suo approccio pratico mi ha aiutato tantissimo."</p>
-                        <p class="testimonial-author">— Elena, Roma</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-6 mb-4">
-                    <div class="testimonial-card">
-                        <p>"Mia figlia di 10 anni segue lezioni con Anna da un anno e ne è entusiasta. Anna ha un modo speciale di coinvolgere i bambini, rendendo l'apprendimento un gioco."</p>
-                        <p class="testimonial-author">— Francesca, Bologna</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-6 mb-4">
-                    <div class="testimonial-card">
-                        <p>"Preparandomi per l'esame di russo all'università, Anna mi ha aiutato a superare le mie difficoltà con la grammatica. Paziente, competente e sempre disponibile."</p>
-                        <p class="testimonial-author">— Luca, Firenze</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Контакты и форма -->
-    <section id="contact" class="py-5">
-        <div class="container py-5">
-            <h2 class="section-title">Prenota la tua lezione di prova gratuita</h2>
-            <p class="text-center mb-5">30 minuti per conoscerci, valutare il tuo livello e definire il percorso più adatto a te.</p>
+    <!-- Преимущества -->
+    <section id="benefits" class="content-block">
+        <div class="wave-divider"></div>
+        <div class="container">
+            <h2 class="section-title">I Vantaggi</h2>
             
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <div class="contact-form">
-                        <form id="contactForm">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Nome e Cognome" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" placeholder="Email" required>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="tel" class="form-control" placeholder="Telefono (WhatsApp preferito)">
-                                </div>
-                                <div class="col-md-6">
-                                    <select class="form-control" required>
-                                        <option value="" disabled selected>Seleziona il tipo di corso</option>
-                                        <option>Per Adulti</option>
-                                        <option>Per Bambini/Ragazzi</option>
-                                        <option>Per Studenti Universitari</option>
-                                        <option>Non sono sicuro/a</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-3">
-                                <textarea class="form-control" rows="5" placeholder="Raccontami i tuoi obiettivi e il tuo livello attuale (principiante, intermedio...)" required></textarea>
-                            </div>
-                            
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary-custom btn-lg px-5">Prenota lezione gratuita</button>
-                            </div>
-                        </form>
+                    <div class="text-reveal">
+                        <ul class="styled-list">
+                            <li style="--i: 1"><strong>Studio con parlante nativo diplomato</strong> — formazione specifica nell'insegnamento del russo come lingua straniera</li>
+                            <li style="--i: 2"><strong>Pratica della lingua parlata e pronuncia corretta dal primo giorno</strong> — anche se avete difficoltà a pronunciare</li>
+                            <li style="--i: 3"><strong>Studio più veloce della lingua russa parlata</strong> — senza sgobbare sui libri delle regole grammaticali</li>
+                            <li style="--i: 4"><strong>Flessibilità totale</strong> — nella vostra casa, nell'ufficio, nella mia casa</li>
+                            <li style="--i: 5"><strong>Programma individuale</strong> — secondo i vostri obiettivi e ritmo di apprendimento</li>
+                            <li style="--i: 6"><strong>Lezioni da 70 minuti</strong> — invece dei soliti 45-60 minuti delle scuole</li>
+                            <li style="--i: 7"><strong>Prima lezione gratuita</strong> — per conoscersi e valutare il metodo</li>
+                        </ul>
                     </div>
                     
-                    <div class="row mt-5 text-center">
-                        <div class="col-md-4 mb-4">
-                            <div class="p-3">
-                                <i class="fas fa-envelope fa-2x mb-3" style="color: var(--color-secondary);"></i>
-                                <h5>Email</h5>
-                                <p>anna@insegnantedirusso.it</p>
+                    <div class="text-center mt-5">
+                        <a href="#contact" class="elegant-btn elegant-btn-primary">
+                            Inizia la Tua Lezione Gratuita
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Программа -->
+    <section id="program" class="content-block">
+        <div class="wave-divider"></div>
+        <div class="container">
+            <h2 class="section-title">Come Funziona</h2>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="text-reveal">
+                        <p class="mb-5">Dopo 6 mesi di studio regolare (2-3 volte a settimana) potrai:</p>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="styled-list">
+                                    <li style="--i: 1">Presentarti e descrivere la tua professione</li>
+                                    <li style="--i: 2">Parlare di hobby e interessi personali</li>
+                                    <li style="--i: 3">Fare auguri e ringraziare correttamente</li>
+                                    <li style="--i: 4">Organizzare incontri e inviti</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="styled-list">
+                                    <li style="--i: 5">Chiedere e dare indicazioni stradali</li>
+                                    <li style="--i: 6">Ordinare al ristorante e fare shopping</li>
+                                    <li style="--i: 7">Viaggiare in Russia con sicurezza</li>
+                                    <li style="--i: 8">Comunicare con le persone russe</li>
+                                </ul>
                             </div>
                         </div>
                         
-                        <div class="col-md-4 mb-4">
-                            <div class="p-3">
-                                <i class="fab fa-whatsapp fa-2x mb-3" style="color: var(--color-secondary);"></i>
-                                <h5>WhatsApp</h5>
-                                <p>+39 123 456 7890</p>
+                        <p class="mt-5 text-center" style="color: var(--accent-color); font-style: italic;">
+                            Non sarete più come un pesce fuor d'acqua durante comunicazione con le persone russe.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Цены -->
+    <section id="pricing" class="content-block">
+        <div class="wave-divider"></div>
+        <div class="container">
+            <h2 class="section-title">Investimento</h2>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="text-reveal" style="--i: 1">
+                        <p class="text-center mb-4">
+                            <em>Andiamo a vedere, è caro o a buon mercato?</em>
+                        </p>
+                        
+                        <p>
+                            Il costo dello studio in gruppo nella scuola per corso di sera (3 mesi) è 
+                            <strong style="color: var(--accent-color);">323€ in totale per 10 lezioni</strong> (32€ a lezione). 
+                            Il gruppo è di 3-6 persone.
+                        </p>
+                        
+                        <p class="mt-3">
+                            <strong>Studiando con me, pagate su ogni lezione dopo la fine della lezione. 
+                            Il risparmio sarà 15€ per ogni lezione.</strong>
+                        </p>
+                    </div>
+                    
+                    <div class="mt-5 text-reveal" style="--i: 2">
+                        <h4 class="text-center mb-4">Le Mie Tariffe:</h4>
+                        
+                        <div class="table-responsive">
+                            <table class="elegant-table">
+                                <thead>
+                                    <tr>
+                                        <th>Modalità</th>
+                                        <th>Frequenza</th>
+                                        <th>Prezzo per lezione</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Nella mia casa</td>
+                                        <td>1 volta a settimana</td>
+                                        <td><strong>20€</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nella mia casa</td>
+                                        <td>2 volte a settimana</td>
+                                        <td><strong>15€</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A casa tua/ufficio</td>
+                                        <td>1 volta a settimana</td>
+                                        <td><strong>25€</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A casa tua/ufficio</td>
+                                        <td>2 volte a settimana</td>
+                                        <td><strong>20€</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <p class="text-center mt-4" style="color: var(--text-medium);">
+                            <em>Tutti i materiali didattici sono inclusi nel costo</em>
+                        </p>
+                    </div>
+                    
+                    <div class="text-center mt-5">
+                        <a href="#contact" class="elegant-btn elegant-btn-primary">
+                            Registrarsi per la Lezione Gratuita
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contact" class="content-block">
+        <div class="wave-divider"></div>
+        <div class="container">
+            <h2 class="section-title">Contattami</h2>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="contact-item" style="--i: 1">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <h5 class="contact-text">Email</h5>
+                                <p class="contact-detail">nadezhda@insegnantedirusso.it</p>
                             </div>
                         </div>
                         
-                        <div class="col-md-4 mb-4">
-                            <div class="p-3">
-                                <i class="fas fa-video fa-2x mb-3" style="color: var(--color-secondary);"></i>
-                                <h5>Lezioni Online</h5>
-                                <p>Zoom, Skype, Meet</p>
+                        <div class="col-md-4">
+                            <div class="contact-item" style="--i: 2">
+                                <div class="contact-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <h5 class="contact-text">WhatsApp</h5>
+                                <p class="contact-detail">+39 123 456 7890</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="contact-item" style="--i: 3">
+                                <div class="contact-icon">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <h5 class="contact-text">Lezioni Online</h5>
+                                <p class="contact-detail">Zoom, Skype, Meet</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-5">
+                        <div class="text-reveal" style="--i: 4">
+                            <h4 class="mb-4">Pronto a cominciare il tuo viaggio nel russo?</h4>
+                            <p class="mb-4" style="color: var(--text-medium);">
+                                La prima lezione di 30 minuti è gratuita e senza impegno. 
+                                Ci conosceremo, valuteremo il tuo livello e definiremo il percorso migliore per te.
+                            </p>
+                            
+                            <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+                                <a href="mailto:nadezhda@insegnantedirusso.it" class="elegant-btn elegant-btn-primary">
+                                    <i class="fas fa-envelope me-2"></i> Invia Email
+                                </a>
+                                <a href="https://wa.me/391234567890" class="elegant-btn">
+                                    <i class="fab fa-whatsapp me-2"></i> WhatsApp
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -792,47 +1009,58 @@
     </section>
 
     <!-- Футер -->
-    <footer class="footer">
+    <footer class="footer-elegant">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4">
-                    <h4 class="mb-4 text-white">Anna Ivanova</h4>
-                    <p>Insegnante di russo specializzata per studenti italiani. Lezioni online personalizzate per adulti, bambini e studenti.</p>
-                    <div class="social-links mt-4">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    <h4 class="footer-title">Nadezhda Hadarina</h4>
+                    <p style="color: rgba(255,255,255,0.7);">
+                        Insegnante di russo madrelingua con diploma specializzato. 
+                        Lezioni personalizzate per italiani che vogliono parlare russo fluentemente.
+                    </p>
+                    <div class="social-elegant">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
                 <div class="col-lg-4 mb-4">
-                    <h5 class="mb-4 text-white">Link veloci</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#about">Chi sono</a></li>
-                        <li class="mb-2"><a href="#method">Il mio metodo</a></li>
-                        <li class="mb-2"><a href="#courses">Corsi</a></li>
-                        <li class="mb-2"><a href="#contact">Contatti</a></li>
+                    <h4 class="footer-title">Link Utili</h4>
+                    <ul class="footer-links">
+                        <li><a href="#method">Il Mio Metodo</a></li>
+                        <li><a href="#benefits">Vantaggi</a></li>
+                        <li><a href="#program">Programma</a></li>
+                        <li><a href="#pricing">Prezzi</a></li>
+                        <li><a href="#contact">Contatti</a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-4 mb-4">
-                    <h5 class="mb-4 text-white">Orari di contatto</h5>
-                    <p>Lunedì - Venerdì: 9:00 - 20:00<br>
-                    Sabato: 10:00 - 14:00<br>
-                    Domenica: Chiuso</p>
-                    <p>Le lezioni si svolgono online, flessibili secondo le tue esigenze.</p>
+                    <h4 class="footer-title">Orari</h4>
+                    <p style="color: rgba(255,255,255,0.7);">
+                        Lunedì - Venerdì: 9:00 - 20:00<br>
+                        Sabato: 10:00 - 14:00<br>
+                        Domenica: Chiuso
+                    </p>
+                    <p style="color: rgba(255,255,255,0.7);">
+                        Le lezioni si svolgono online o in presenza, con flessibilità totale.
+                    </p>
                 </div>
             </div>
             
-            <hr class="mt-4" style="border-color: rgba(255,255,255,0.1);">
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 2rem 0;">
             
-            <div class="row mt-4">
+            <div class="row">
                 <div class="col-md-6">
-                    <p class="mb-0">&copy; 2023 Anna Ivanova - Insegnante di Russo. Tutti i diritti riservati.</p>
+                    <p class="mb-0" style="color: rgba(255,255,255,0.7);">
+                        &copy; 2024 Nadezhda Hadarina - Insegnante di Russo
+                    </p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <a href="#" class="me-3">Privacy Policy</a>
-                    <a href="#">Cookie Policy</a>
+                    <a href="#" class="me-3" style="color: rgba(255,255,255,0.7);">Privacy Policy</a>
+                    <a href="#" style="color: rgba(255,255,255,0.7);">Cookie Policy</a>
                 </div>
             </div>
         </div>
@@ -841,35 +1069,64 @@
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Плавная прокрутка -->
     <script>
-        // Плавная прокрутка для навигационных ссылок
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+        // Анимация появления элементов при скролле
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0');
                 }
             });
+        }, observerOptions);
+        
+        // Инициализация анимаций
+        document.addEventListener('DOMContentLoaded', () => {
+            // Добавляем классы для анимации
+            document.querySelectorAll('.text-reveal, .contact-item').forEach(el => {
+                el.classList.add('opacity-0');
+                observer.observe(el);
+            });
+            
+            // Плавная прокрутка
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Плавное появление элементов при загрузке
+            setTimeout(() => {
+                document.querySelectorAll('.section-title, .main-title, .hero-subtitle').forEach(el => {
+                    el.style.animationPlayState = 'running';
+                });
+            }, 100);
         });
         
-        // Обработка формы
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Плавное появление при скролле
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
             
-            // Здесь обычно код для отправки формы на сервер
-            // Для демо-версии просто показываем сообщение
-            
-            alert('Grazie per la tua richiesta! Ti contatterò entro 24 ore per confermare la lezione di prova.');
-            this.reset();
+            // Параллакс эффект для декоративных элементов
+            document.querySelectorAll('.header-decoration').forEach((el, index) => {
+                const speed = index === 0 ? 0.3 : 0.2;
+                el.style.transform = `translateY(${rate * speed}px) rotate(${rate * 0.1}deg)`;
+            });
         });
     </script>
 </body>
